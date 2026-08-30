@@ -1,0 +1,713 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+   <title>Word Counter - Count Words, Characters & Sentences</title>
+
+<meta
+    name="description"
+    content="Free online word counter to count words, characters, characters without spaces, sentences and paragraphs quickly and easily."
+>
+
+<meta name="robots" content="index, follow">
+
+<meta name="author" content="Word Counter">
+
+    <link rel="stylesheet" href="style.css">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+
+    <!-- Home page sections styling -->
+    <style>
+        /* How To Use Section */
+        .info-section {
+            width: 100%;
+            max-width: 900px;
+            margin: 50px auto 0;
+            padding: 0 20px;
+        }
+
+        .info-section h2 {
+            margin: 0 0 12px;
+            text-align: center;
+            font-size: 30px;
+            color: #243b53;
+        }
+
+        .section-intro {
+            max-width: 700px;
+            margin: 0 auto 28px;
+            text-align: center;
+            color: #627d98;
+            font-size: 15px;
+            line-height: 1.7;
+        }
+
+        .how-to-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 18px;
+        }
+
+        .how-to-card {
+            background: #ffffff;
+            border: 1px solid #e2e8f0;
+            border-radius: 14px;
+            padding: 24px 20px;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.05);
+        }
+
+        .how-to-card .step-number {
+            display: inline-flex;
+            width: 36px;
+            height: 36px;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 14px;
+            border-radius: 50%;
+            background: #eff6ff;
+            color: #2563eb;
+            font-size: 16px;
+            font-weight: 700;
+        }
+
+        .how-to-card h3 {
+            margin: 0 0 9px;
+            color: #243b53;
+            font-size: 18px;
+        }
+
+        .how-to-card p {
+            margin: 0;
+            color: #627d98;
+            font-size: 14px;
+            line-height: 1.7;
+        }
+
+        /* FAQ Section */
+        .faq-section {
+            width: 100%;
+            max-width: 900px;
+            margin: 55px auto 0;
+            padding: 0 20px;
+        }
+
+        .faq-list {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .faq-item {
+            background: #ffffff;
+            border: 1px solid #e2e8f0;
+            border-radius: 12px;
+            padding: 20px 22px;
+            box-shadow: 0 5px 18px rgba(0, 0, 0, 0.04);
+        }
+
+        .faq-item h3 {
+            margin: 0 0 8px;
+            color: #243b53;
+            font-size: 16px;
+        }
+
+        .faq-item p {
+            margin: 0;
+            color: #627d98;
+            font-size: 14px;
+            line-height: 1.7;
+        }
+
+        .faq-more {
+            margin-top: 25px;
+            text-align: center;
+        }
+
+        .faq-more a {
+            display: inline-block;
+            padding: 10px 20px;
+            border-radius: 8px;
+            background: #2563eb;
+            color: #ffffff;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 700;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .faq-more a:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 12px rgba(0, 0, 0, 0.15);
+        }
+
+        /* Mobile */
+        @media (max-width: 700px) {
+
+            .info-section,
+            .faq-section {
+                padding: 0 14px;
+            }
+
+            .info-section h2,
+            .faq-section h2 {
+                font-size: 26px;
+            }
+
+            .how-to-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .how-to-card {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header class="site-header">
+
+        <div class="header-container">
+
+            <a href="index.html" class="logo">
+                Word Counter
+            </a>
+
+            <nav class="main-nav" aria-label="Main navigation">
+
+                <a href="index.html">
+                    Home
+                </a>
+
+                <a href="about.html">
+                    About Us
+                </a>
+
+            </nav>
+
+        </div>
+
+    </header>
+
+
+    <!-- Main Content -->
+    <main>
+
+        <!-- Word Counter Tool -->
+        <div class="container">
+
+            <h1>
+                Word Counter
+            </h1>
+
+            <p class="intro">
+                Count words, characters and sentences quickly and easily.
+            </p>
+
+
+            <!-- Text Area -->
+            <textarea
+                id="textInput"
+                rows="15"
+                placeholder="Type or paste your text here..."
+                aria-label="Enter text to count"
+            ></textarea>
+
+
+            <!-- Action Buttons -->
+            <div class="actions">
+
+                <button
+                    type="button"
+                    class="copy-btn"
+                    id="copyBtn"
+                >
+                    Copy
+                </button>
+
+                <button
+                    type="button"
+                    class="clear-btn"
+                    id="clearBtn"
+                >
+                    Clear
+                </button>
+
+            </div>
+
+
+            <!-- Counters -->
+            <div class="counters">
+
+                <div class="counter-box">
+                    <strong id="wordCount">0</strong>
+                    <span>Words</span>
+                </div>
+
+                <div class="counter-box">
+                    <strong id="characterCount">0</strong>
+                    <span>Characters</span>
+                </div>
+
+                <div class="counter-box">
+                    <strong id="characterNoSpaceCount">0</strong>
+                    <span>Characters without spaces</span>
+                </div>
+
+                <div class="counter-box">
+                    <strong id="sentenceCount">0</strong>
+                    <span>Sentences</span>
+                </div>
+
+                <div class="counter-box">
+                    <strong id="paragraphCount">0</strong>
+                    <span>Paragraphs</span>
+                </div>
+
+            </div>
+
+        </div>
+
+
+       <!-- How to Use Word Counter -->
+<section class="how-to-use">
+
+    <div class="content-container">
+
+        <h2>How to Use Word Counter</h2>
+
+        <p class="section-intro">
+            Word Counter is a simple and convenient online tool that helps you
+            quickly check the length and structure of your text. It automatically
+            counts words, characters, characters without spaces, sentences and
+            paragraphs as you type or paste your content.
+        </p>
+
+
+        <div class="how-to-content">
+
+            <h3>What Is a Word Counter?</h3>
+
+            <p>
+                A word counter is an online writing tool that calculates the
+                number of words contained in a piece of text. Word counting is
+                useful for students, writers, bloggers, content creators,
+                professionals and anyone who needs to keep their writing within
+                a particular length.
+            </p>
+
+            <p>
+                Our Word Counter provides several useful statistics at the same
+                time. Instead of manually counting your text, you can simply
+                enter or paste your content into the text area and the tool will
+                automatically update the results.
+            </p>
+
+
+            <h3>How to Use the Word Counter</h3>
+
+            <p>
+                Using Word Counter is straightforward. You do not need to create
+                an account or install any software. Follow these simple steps:
+            </p>
+
+            <ol>
+                <li>
+                    <strong>Enter Your Text:</strong>
+                    Type your text directly into the text area or copy and paste
+                    text from another document.
+                </li>
+
+                <li>
+                    <strong>Check the Counters:</strong>
+                    Once you enter text, the tool automatically calculates the
+                    number of words, characters, characters without spaces,
+                    sentences and paragraphs.
+                </li>
+
+                <li>
+                    <strong>Review Your Results:</strong>
+                    Use the displayed statistics to check whether your content
+                    meets the required word or character limit.
+                </li>
+
+                <li>
+                    <strong>Copy or Clear Your Text:</strong>
+                    Use the Copy button when you want to copy your text to your
+                    clipboard. Use the Clear button when you want to remove the
+                    current text and start again.
+                </li>
+            </ol>
+
+
+            <h3>Understanding the Word Count</h3>
+
+            <p>
+                The word count shows the number of words detected in the text
+                you enter. This can be particularly useful when working with
+                assignments, articles, essays, applications, blog posts or
+                other content that has a specific word limit.
+            </p>
+
+            <p>
+                Checking your word count before submitting or publishing content
+                can help you make sure that your writing stays within the
+                requested length.
+            </p>
+
+
+            <h3>Understanding Character Count</h3>
+
+            <p>
+                Character count shows the total number of characters in your
+                text, including spaces. Character limits are commonly used for
+                forms, descriptions, online posts and other types of digital
+                content.
+            </p>
+
+            <p>
+                By checking the character count, you can quickly determine how
+                much text you have entered and make adjustments when a specific
+                character limit needs to be followed.
+            </p>
+
+
+            <h3>Characters Without Spaces</h3>
+
+            <p>
+                The characters-without-spaces counter provides the number of
+                characters after spaces are excluded. This gives you another
+                way to understand the length of your writing and can be useful
+                when a requirement specifically focuses on characters rather
+                than spaces.
+            </p>
+
+
+            <h3>Sentence Count</h3>
+
+            <p>
+                The sentence counter provides an automatic count of the
+                sentences detected in your text. Sentence count can help you
+                review the overall structure and length of your writing.
+            </p>
+
+            <p>
+                This can be useful when reviewing essays, articles, reports and
+                other longer pieces of content where sentence structure matters.
+            </p>
+
+
+            <h3>Paragraph Count</h3>
+
+            <p>
+                The paragraph counter counts separate blocks of text entered
+                into the tool. This can help you quickly understand how your
+                content is divided and organized.
+            </p>
+
+
+            <h3>Who Can Use a Word Counter?</h3>
+
+            <p>
+                Word Counter can be useful for many different types of users.
+                Students can use it to check assignment and essay lengths.
+                Writers and bloggers can use it to monitor the size of articles
+                and other written content. Professionals can use it when
+                preparing documents, applications, descriptions and other
+                text-based material.
+            </p>
+
+            <p>
+                Because the tool works directly in a web browser, it can be
+                accessed from computers, tablets and compatible mobile devices
+                without requiring additional software.
+            </p>
+
+
+            <h3>Why Is Word Counting Important?</h3>
+
+            <p>
+                Many writing tasks have recommended or required length limits.
+                An academic assignment may have a maximum number of words, a
+                form may have a character restriction, or an article may need
+                to meet a particular publishing guideline.
+            </p>
+
+            <p>
+                A word counter makes it easier to monitor these limits while
+                writing. Instead of estimating the length of your content,
+                you can check the actual statistics and make informed edits.
+            </p>
+
+
+            <h3>Tips for Checking Your Text</h3>
+
+            <p>
+                For the most useful results, paste or type the complete text
+                you want to check into the Word Counter. Review the word count
+                first if your task has a word limit, and check the character
+                count when your content needs to stay within a character
+                restriction.
+            </p>
+
+            <p>
+                You can also use the sentence and paragraph counts to get a
+                quick overview of the structure of longer content. After
+                making changes to your text, the counters update automatically,
+                allowing you to check the results again.
+            </p>
+
+
+            <h3>Is Word Counter Easy to Use?</h3>
+
+            <p>
+                Yes. Word Counter is designed to keep the process simple. Enter
+                your text, review the automatically calculated statistics and
+                make any necessary changes. There is no complicated setup
+                involved in the basic word-counting functionality.
+            </p>
+
+
+            <h3>Privacy and Your Text</h3>
+
+            <p>
+                The basic word-counting process is designed to work directly
+                in your browser. For more information about how information is
+                handled on this website, please review our
+                <a href="privacy.html">Privacy Policy</a>.
+            </p>
+
+            <p>
+                If you have questions, suggestions or feedback about Word
+                Counter, you can contact us through our
+                <a href="contact.html">Contact Us</a> page.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+        <!-- FAQ -->
+        <section class="faq-section">
+
+            <h2>
+                Frequently Asked Questions
+            </h2>
+
+            <p class="section-intro">
+                Find answers to common questions about Word Counter,
+                including how it works and what it counts.
+            </p>
+
+
+            <div class="faq-list">
+
+                <article class="faq-item">
+
+                    <h3>
+                        What is Word Counter?
+                    </h3>
+
+                    <p>
+                        Word Counter is a free online tool that helps you
+                        quickly count words, characters, characters without
+                        spaces, sentences and paragraphs in your text.
+                    </p>
+
+                </article>
+
+
+                <article class="faq-item">
+
+                    <h3>
+                        How do I use the Word Counter?
+                    </h3>
+
+                    <p>
+                        Simply type or paste your text into the text box.
+                        The tool automatically updates the displayed counts
+                        as you enter your text.
+                    </p>
+
+                </article>
+
+
+                <article class="faq-item">
+
+                    <h3>
+                        Is Word Counter free to use?
+                    </h3>
+
+                    <p>
+                        Yes. The basic Word Counter tool is free to use and
+                        does not require an account.
+                    </p>
+
+                </article>
+
+
+                <article class="faq-item">
+
+                    <h3>
+                        Does Word Counter count characters?
+                    </h3>
+
+                    <p>
+                        Yes. The tool displays both the total number of
+                        characters and the number of characters without
+                        spaces.
+                    </p>
+
+                </article>
+
+
+                <article class="faq-item">
+
+                    <h3>
+                        Does Word Counter count sentences?
+                    </h3>
+
+                    <p>
+                        Yes. Word Counter automatically provides a sentence
+                        count based on the text entered into the tool.
+                    </p>
+
+                </article>
+
+
+                <article class="faq-item">
+
+                    <h3>
+                        Does Word Counter count paragraphs?
+                    </h3>
+
+                    <p>
+                        Yes. The tool counts paragraphs based on separate
+                        blocks of text entered by the user.
+                    </p>
+
+                </article>
+
+
+                <article class="faq-item">
+
+                    <h3>
+                        Can I copy my text?
+                    </h3>
+
+                    <p>
+                        Yes. You can use the Copy button to copy the text
+                        from the Word Counter to your clipboard.
+                    </p>
+
+                </article>
+
+
+                <article class="faq-item">
+
+                    <h3>
+                        Can I clear my text?
+                    </h3>
+
+                    <p>
+                        Yes. The Clear button removes the text from the
+                        text area and resets the displayed counters.
+                    </p>
+
+                </article>
+
+            </div>
+
+
+            <div class="faq-more">
+
+                <a href="faq.html">
+                    View All FAQs
+                </a>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- Footer -->
+    <footer class="site-footer">
+
+        <div class="footer-container">
+
+            <div class="footer-brand">
+
+                <h2>
+                    Word Counter
+                </h2>
+
+                <p>
+                    A simple and free online tool for counting words,
+                    characters, sentences and paragraphs.
+                </p>
+
+            </div>
+
+
+            <div class="footer-links">
+
+                <h3>
+                    Quick Links
+                </h3>
+
+                <a href="index.html">
+                    Home
+                </a>
+
+                <a href="about.html">
+                    About Us
+                </a>
+
+                <a href="faq.html">
+                    FAQ
+                </a>
+
+                <a href="privacy.html">
+                    Privacy Policy
+                </a>
+
+                <a href="terms.html">
+                    Terms &amp; Conditions
+                </a>
+
+                <a href="contact.html">
+                    Contact Us
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <div class="footer-bottom">
+
+            <p>
+                © 2026 Word Counter. All rights reserved.
+            </p>
+
+        </div>
+
+    </footer>
+
+
+    <!-- JavaScript -->
+    <script src="script.js"></script>
+
+</body>
+
+</html>

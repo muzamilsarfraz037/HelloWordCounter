@@ -1,0 +1,1333 @@
+/* =========================================================
+   WORD COUNTER - GLOBAL STYLES
+   Lightweight, responsive and reusable
+   ========================================================= */
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f4f7fb;
+    color: #243b53;
+    line-height: 1.6;
+}
+
+a {
+    color: inherit;
+}
+
+button,
+input,
+textarea {
+    font: inherit;
+}
+
+
+/* =========================================================
+   HEADER / NAVIGATION
+   Supports both old and new header classes
+   ========================================================= */
+
+.navbar,
+.site-header {
+    width: 100%;
+    background: rgba(255, 255, 255, 0.96);
+    border-bottom: 1px solid #e6edf5;
+}
+
+.navbar {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 18px 30px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.site-header {
+    position: relative;
+}
+
+.header-container {
+    width: 100%;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 18px 30px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-logo,
+.site-logo {
+    font-size: 22px;
+    font-weight: 700;
+    color: #2563eb;
+    text-decoration: none;
+    letter-spacing: -0.3px;
+}
+
+.nav-links,
+.main-nav {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.nav-links a,
+.main-nav a {
+    text-decoration: none;
+    color: #334e68;
+    font-size: 15px;
+    font-weight: 600;
+
+    padding: 9px 15px;
+    border-radius: 8px;
+
+    transition:
+        background-color 0.2s ease,
+        color 0.2s ease,
+        transform 0.2s ease;
+}
+
+.nav-links a:hover,
+.main-nav a:hover {
+    background: #2563eb;
+    color: #ffffff;
+    transform: translateY(-2px);
+}
+
+.nav-links a:focus-visible,
+.main-nav a:focus-visible {
+    outline: 3px solid rgba(37, 99, 235, 0.25);
+    outline-offset: 2px;
+}
+
+
+/* =========================================================
+   MAIN AREA
+   ========================================================= */
+
+main {
+    padding: 35px 20px 60px;
+}
+
+
+/* =========================================================
+   WORD COUNTER CONTAINER
+   ========================================================= */
+
+.container {
+    width: 100%;
+    max-width: 670px;
+    margin: 0 auto;
+
+    background: #ffffff;
+    padding: 35px;
+    border-radius: 18px;
+
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+}
+
+
+/* =========================================================
+   HEADINGS
+   ========================================================= */
+
+h1 {
+    margin: 0 0 12px;
+    text-align: center;
+
+    font-size: 38px;
+    line-height: 1.2;
+    color: #2563eb;
+}
+
+h2,
+h3 {
+    color: #243b53;
+}
+
+.intro {
+    margin: 0 0 28px;
+    text-align: center;
+
+    color: #627d98;
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+
+/* =========================================================
+   TEXTAREA
+   ========================================================= */
+
+textarea {
+    width: 100%;
+    min-height: 360px;
+
+    padding: 18px;
+
+    border: 2px solid #d9e2ec;
+    border-radius: 12px;
+
+    resize: vertical;
+
+    font-family: inherit;
+    font-size: 16px;
+    line-height: 1.6;
+
+    color: #243b53;
+    background: #ffffff;
+
+    outline: none;
+
+    transition:
+        border-color 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+textarea:focus {
+    border-color: #2563eb;
+
+    box-shadow:
+        0 0 0 4px rgba(37, 99, 235, 0.12);
+}
+
+textarea::placeholder {
+    color: #829ab1;
+}
+
+
+/* =========================================================
+   BUTTONS
+   ========================================================= */
+
+.actions {
+    display: flex;
+    gap: 8px;
+    margin-top: 6px;
+}
+
+.actions button {
+    border: none;
+    border-radius: 9px;
+
+    padding: 10px 24px;
+
+    font-size: 15px;
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease,
+        opacity 0.2s ease;
+}
+
+.copy-btn {
+    background: #2563eb;
+    color: #ffffff;
+}
+
+.clear-btn {
+    background: #ef4444;
+    color: #ffffff;
+}
+
+.actions button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 12px rgba(0, 0, 0, 0.15);
+}
+
+.actions button:active {
+    transform: translateY(0);
+    box-shadow: none;
+}
+
+
+/* =========================================================
+   COUNTER GRID
+   ========================================================= */
+
+.counters {
+    margin-top: 18px;
+
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 14px;
+}
+
+.counter-box {
+    min-height: 88px;
+
+    padding: 15px 10px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+
+    background: #eff6ff;
+    border-radius: 12px;
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.counter-box:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.07);
+}
+
+.counter-box strong {
+    display: block;
+
+    margin-bottom: 6px;
+
+    font-size: 25px;
+    line-height: 1.2;
+    color: #2563eb;
+}
+
+.counter-box span {
+    font-size: 14px;
+    color: #2563eb;
+}
+
+.counter-box:nth-child(4) {
+    grid-column: 1 / 2;
+}
+
+.counter-box:nth-child(5) {
+    grid-column: 2 / 3;
+}
+
+
+/* =========================================================
+   CONTACT PAGE
+   ========================================================= */
+
+.contact-section {
+    padding: 20px 0 10px;
+}
+
+.contact-container {
+    width: 100%;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+
+/* Contact heading */
+
+.contact-heading {
+    max-width: 720px;
+    margin: 0 auto 42px;
+    text-align: center;
+}
+
+.section-label {
+    display: inline-block;
+
+    margin-bottom: 10px;
+
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+
+    color: #2563eb;
+}
+
+.contact-heading h1 {
+    margin-bottom: 14px;
+    font-size: 42px;
+}
+
+.contact-heading p {
+    margin: 0;
+
+    color: #627d98;
+    font-size: 16px;
+}
+
+
+/* Contact two-column layout */
+
+.contact-grid {
+    display: grid;
+    grid-template-columns: 0.9fr 1.1fr;
+    gap: 28px;
+
+    align-items: start;
+}
+
+
+/* Left information area */
+
+.contact-info {
+    padding: 32px;
+    background: #ffffff;
+
+    border: 1px solid #e5edf6;
+    border-radius: 18px;
+
+    box-shadow:
+        0 10px 30px rgba(15, 23, 42, 0.06);
+}
+
+.contact-info h2 {
+    margin: 0 0 12px;
+    font-size: 25px;
+}
+
+.contact-info > p {
+    margin: 0 0 25px;
+    color: #627d98;
+    font-size: 15px;
+}
+
+
+/* Contact cards */
+
+.contact-card {
+    display: flex;
+    gap: 16px;
+
+    padding: 18px 0;
+
+    border-top: 1px solid #edf2f7;
+}
+
+.contact-card:first-of-type {
+    border-top: none;
+}
+
+.contact-icon {
+    flex: 0 0 44px;
+
+    width: 44px;
+    height: 44px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    border-radius: 12px;
+
+    background: #eff6ff;
+    color: #2563eb;
+
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.contact-card h3 {
+    margin: 0 0 5px;
+
+    font-size: 16px;
+    color: #243b53;
+}
+
+.contact-card p {
+    margin: 0 0 5px;
+
+    color: #627d98;
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+.contact-card a {
+    color: #2563eb;
+    font-size: 14px;
+    font-weight: 600;
+    text-decoration: none;
+    overflow-wrap: anywhere;
+}
+
+.contact-card a:hover {
+    text-decoration: underline;
+}
+
+
+/* =========================================================
+   CONTACT FORM
+   ========================================================= */
+
+.contact-form-card {
+    padding: 32px;
+
+    background: #ffffff;
+
+    border: 1px solid #e5edf6;
+    border-radius: 18px;
+
+    box-shadow:
+        0 10px 30px rgba(15, 23, 42, 0.06);
+}
+
+.contact-form-card h2 {
+    margin: 0 0 6px;
+    font-size: 25px;
+}
+
+.form-description {
+    margin: 0 0 25px;
+    color: #627d98;
+    font-size: 14px;
+}
+
+
+/* Form groups */
+
+.form-group {
+    margin-bottom: 18px;
+}
+
+.form-group label {
+    display: block;
+
+    margin-bottom: 7px;
+
+    color: #243b53;
+
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+
+    padding: 13px 14px;
+
+    border: 1px solid #d9e2ec;
+    border-radius: 10px;
+
+    background: #ffffff;
+    color: #243b53;
+
+    font-size: 15px;
+
+    outline: none;
+
+    transition:
+        border-color 0.2s ease,
+        box-shadow 0.2s ease,
+        background-color 0.2s ease;
+}
+
+.form-group input {
+    height: 48px;
+}
+
+.form-group textarea {
+    min-height: 150px;
+    resize: vertical;
+}
+
+.form-group input:hover,
+.form-group textarea:hover {
+    border-color: #b8c7d9;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    border-color: #2563eb;
+
+    box-shadow:
+        0 0 0 4px rgba(37, 99, 235, 0.10);
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+    color: #829ab1;
+}
+
+
+/* Submit button */
+
+.contact-submit {
+    width: 100%;
+
+    border: none;
+    border-radius: 10px;
+
+    padding: 13px 20px;
+
+    background: #2563eb;
+    color: #ffffff;
+
+    font-size: 15px;
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition:
+        background-color 0.2s ease,
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.contact-submit:hover {
+    background: #1d4ed8;
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 7px 18px rgba(37, 99, 235, 0.22);
+}
+
+.contact-submit:active {
+    transform: translateY(0);
+    box-shadow: none;
+}
+
+.form-note {
+    margin: 12px 0 0;
+
+    color: #829ab1;
+
+    font-size: 12px;
+    text-align: center;
+    line-height: 1.5;
+}
+
+
+/* =========================================================
+   GENERAL CONTENT / POLICY PAGES
+   ========================================================= */
+
+.content-page,
+.page-content {
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto;
+
+    padding: 35px;
+
+    background: #ffffff;
+    border-radius: 18px;
+
+    box-shadow:
+        0 10px 30px rgba(0, 0, 0, 0.06);
+}
+
+.content-page h1,
+.page-content h1 {
+    margin-bottom: 25px;
+}
+
+.content-page h2,
+.page-content h2 {
+    margin-top: 28px;
+    margin-bottom: 8px;
+
+    font-size: 22px;
+}
+
+.content-page p,
+.page-content p {
+    color: #486581;
+    font-size: 15px;
+    line-height: 1.8;
+}
+
+
+/* =========================================================
+   FOOTER
+   Supports old footer classes AND new contact page classes
+   ========================================================= */
+
+.footer,
+.site-footer {
+    margin-top: 20px;
+
+    background: #ffffff;
+
+    border-top: 1px solid #e2e8f0;
+}
+
+.footer {
+    padding: 40px 20px 20px;
+}
+
+.site-footer {
+    padding: 48px 20px 20px;
+}
+
+.footer-content,
+.footer-container {
+    width: 100%;
+    max-width: 1100px;
+    margin: 0 auto;
+
+    display: flex;
+    justify-content: space-between;
+
+    gap: 50px;
+}
+
+.footer-brand,
+.footer-about {
+    max-width: 450px;
+}
+
+.footer-brand h3,
+.footer-about h2 {
+    margin: 0 0 10px;
+
+    color: #2563eb;
+    font-size: 20px;
+}
+
+.footer-brand p,
+.footer-about p {
+    margin: 0;
+
+    color: #627d98;
+    font-size: 14px;
+    line-height: 1.7;
+}
+
+
+/* Footer links */
+
+.footer-links {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.footer-links h3 {
+    margin: 0;
+    font-size: 15px;
+    color: #243b53;
+}
+
+.footer-links a {
+    color: #334e68;
+
+    text-decoration: none;
+
+    font-size: 14px;
+    font-weight: 600;
+
+    transition: color 0.2s ease;
+}
+
+.footer-links a:hover {
+    color: #2563eb;
+}
+
+
+/* New footer layout */
+
+.site-footer .footer-links {
+    display: flex;
+    flex-wrap: wrap;
+    align-content: flex-start;
+    gap: 10px 22px;
+
+    max-width: 520px;
+}
+
+.site-footer .footer-links h3 {
+    width: 100%;
+    margin-bottom: 4px;
+}
+
+
+/* Footer bottom */
+
+.footer-bottom {
+    width: 100%;
+    max-width: 1100px;
+    margin: 30px auto 0;
+
+    padding-top: 18px;
+
+    border-top: 1px solid #e2e8f0;
+
+    text-align: center;
+}
+
+.footer-bottom p {
+    margin: 0;
+
+    color: #829ab1;
+    font-size: 13px;
+}
+
+
+/* =========================================================
+   ACCESSIBILITY
+   ========================================================= */
+
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+a:focus-visible {
+    outline: 3px solid rgba(37, 99, 235, 0.25);
+    outline-offset: 2px;
+}
+
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 850px) {
+
+    .contact-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .contact-info,
+    .contact-form-card {
+        padding: 28px;
+    }
+
+    .contact-heading {
+        margin-bottom: 30px;
+    }
+
+    .footer-content,
+    .footer-container {
+        gap: 30px;
+    }
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 600px) {
+
+    .navbar,
+    .header-container {
+        padding: 14px 16px;
+    }
+
+    .nav-logo,
+    .site-logo {
+        font-size: 19px;
+    }
+
+    .nav-links,
+    .main-nav {
+        gap: 2px;
+    }
+
+    .nav-links a,
+    .main-nav a {
+        padding: 8px 9px;
+        font-size: 13px;
+    }
+
+
+    main {
+        padding: 20px 12px 40px;
+    }
+
+
+    .container {
+        padding: 24px 18px;
+        border-radius: 14px;
+    }
+
+
+    h1 {
+        font-size: 30px;
+    }
+
+
+    textarea {
+        min-height: 300px;
+    }
+
+
+    .counters {
+        grid-template-columns: 1fr;
+    }
+
+    .counter-box:nth-child(4),
+    .counter-box:nth-child(5) {
+        grid-column: auto;
+    }
+
+
+    /* Contact mobile */
+
+    .contact-section {
+        padding: 5px 0 10px;
+    }
+
+    .contact-heading {
+        margin-bottom: 25px;
+    }
+
+    .contact-heading h1 {
+        font-size: 32px;
+    }
+
+    .contact-heading p {
+        font-size: 14px;
+    }
+
+    .contact-grid {
+        gap: 18px;
+    }
+
+    .contact-info,
+    .contact-form-card {
+        padding: 22px 18px;
+        border-radius: 14px;
+    }
+
+    .contact-info h2,
+    .contact-form-card h2 {
+        font-size: 21px;
+    }
+
+    .contact-card {
+        gap: 12px;
+    }
+
+    .contact-icon {
+        flex-basis: 40px;
+        width: 40px;
+        height: 40px;
+    }
+
+
+    /* Footer mobile */
+
+    .footer {
+        padding: 32px 18px 18px;
+    }
+
+    .site-footer {
+        padding: 35px 18px 18px;
+    }
+
+    .footer-content,
+    .footer-container {
+        flex-direction: column;
+        gap: 25px;
+    }
+
+    .footer-links,
+    .site-footer .footer-links {
+        align-items: flex-start;
+    }
+
+    .footer-bottom {
+        margin-top: 25px;
+    }
+}
+
+
+/* =========================================================
+   VERY SMALL MOBILE SCREENS
+   ========================================================= */
+
+@media (max-width: 380px) {
+
+    .header-container {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .main-nav {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .contact-heading h1 {
+        font-size: 29px;
+    }
+
+    .contact-info,
+    .contact-form-card {
+        padding: 20px 15px;
+    }
+}
+/* ================================
+   Legal Pages
+================================ */
+
+.legal-page {
+    padding: 55px 20px 70px;
+}
+
+.legal-container {
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto;
+
+    background: #ffffff;
+    padding: 45px 55px;
+
+    border-radius: 18px;
+
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
+}
+
+.legal-header {
+    text-align: center;
+    margin-bottom: 42px;
+}
+
+.legal-label {
+    display: inline-block;
+
+    margin-bottom: 12px;
+
+    color: #2563eb;
+    font-size: 12px;
+    font-weight: 700;
+
+    letter-spacing: 1.5px;
+}
+
+.legal-header h1 {
+    margin: 0 0 14px;
+
+    font-size: 38px;
+    color: #2563eb;
+}
+
+.legal-header p {
+    max-width: 650px;
+    margin: 0 auto;
+
+    color: #627d98;
+    font-size: 15px;
+    line-height: 1.7;
+}
+
+.legal-section {
+    margin-bottom: 30px;
+}
+
+.legal-section h2 {
+    margin: 0 0 10px;
+
+    font-size: 21px;
+    color: #243b53;
+}
+
+.legal-section p {
+    margin: 0 0 10px;
+
+    color: #486581;
+    font-size: 15px;
+    line-height: 1.75;
+}
+
+.legal-section p:last-child {
+    margin-bottom: 0;
+}
+
+.legal-section a {
+    color: #2563eb;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.legal-section a:hover {
+    text-decoration: underline;
+}
+
+
+/* Mobile Legal Page */
+
+@media (max-width: 600px) {
+
+    .legal-page {
+        padding: 30px 12px 45px;
+    }
+
+    .legal-container {
+        padding: 30px 22px;
+        border-radius: 14px;
+    }
+
+    .legal-header {
+        margin-bottom: 32px;
+    }
+
+    .legal-header h1 {
+        font-size: 30px;
+    }
+
+    .legal-header p {
+        font-size: 14px;
+    }
+
+    .legal-section {
+        margin-bottom: 25px;
+    }
+
+    .legal-section h2 {
+        font-size: 19px;
+    }
+
+    .legal-section p {
+        font-size: 14px;
+        line-height: 1.7;
+    }
+}
+/* ================================
+   FAQ Page
+================================ */
+
+.faq-page {
+    padding: 55px 20px 70px;
+}
+
+.faq-container {
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.faq-header {
+    text-align: center;
+    margin-bottom: 38px;
+}
+
+.faq-label {
+    display: inline-block;
+    margin-bottom: 12px;
+
+    color: #2563eb;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+}
+
+.faq-header h1 {
+    margin: 0 0 14px;
+
+    font-size: 38px;
+    color: #2563eb;
+}
+
+.faq-header p {
+    max-width: 650px;
+    margin: 0 auto;
+
+    color: #627d98;
+    font-size: 15px;
+    line-height: 1.7;
+}
+
+.faq-list {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.faq-item {
+    background: #ffffff;
+
+    padding: 22px 25px;
+
+    border: 1px solid #d9e2ec;
+    border-radius: 12px;
+
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.04);
+
+    transition: transform 0.2s ease,
+                box-shadow 0.2s ease;
+}
+
+.faq-item:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 7px 18px rgba(0, 0, 0, 0.07);
+}
+
+.faq-item h2 {
+    margin: 0 0 9px;
+
+    font-size: 17px;
+    color: #243b53;
+}
+
+.faq-item p {
+    margin: 0;
+
+    color: #486581;
+    font-size: 14px;
+    line-height: 1.7;
+}
+
+.faq-item a {
+    color: #2563eb;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.faq-item a:hover {
+    text-decoration: underline;
+}
+
+
+/* Mobile FAQ */
+
+@media (max-width: 600px) {
+
+    .faq-page {
+        padding: 30px 12px 45px;
+    }
+
+    .faq-header {
+        margin-bottom: 28px;
+    }
+
+    .faq-header h1 {
+        font-size: 30px;
+    }
+
+    .faq-header p {
+        font-size: 14px;
+    }
+
+    .faq-item {
+        padding: 19px 18px;
+    }
+
+    .faq-item h2 {
+        font-size: 16px;
+    }
+
+    .faq-item p {
+        font-size: 14px;
+    }
+}
+/* How to Use Word Counter */
+.how-to-use {
+    padding: 60px 20px;
+    background: #f4f7fb;
+}
+
+.content-container {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.how-to-use h2 {
+    margin: 0 0 12px;
+    text-align: center;
+    font-size: 30px;
+    color: #243b53;
+}
+
+.section-intro {
+    max-width: 760px;
+    margin: 0 auto 35px;
+    text-align: center;
+    color: #627d98;
+    font-size: 15px;
+    line-height: 1.7;
+}
+
+.how-to-content {
+    background: #ffffff;
+    padding: 35px 40px;
+    border-radius: 16px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.06);
+}
+
+.how-to-content h3 {
+    margin: 28px 0 10px;
+    color: #243b53;
+    font-size: 21px;
+}
+
+.how-to-content h3:first-child {
+    margin-top: 0;
+}
+
+.how-to-content p {
+    margin: 0 0 15px;
+    color: #486581;
+    font-size: 15px;
+    line-height: 1.8;
+}
+
+.how-to-content ol {
+    margin: 15px 0 25px;
+    padding-left: 25px;
+}
+
+.how-to-content li {
+    margin-bottom: 12px;
+    color: #486581;
+    font-size: 15px;
+    line-height: 1.7;
+}
+
+.how-to-content strong {
+    color: #243b53;
+}
+
+.how-to-content a {
+    color: #2563eb;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.how-to-content a:hover {
+    text-decoration: underline;
+}
+
+
+/* Mobile */
+@media (max-width: 600px) {
+
+    .how-to-use {
+        padding: 40px 14px;
+    }
+
+    .how-to-use h2 {
+        font-size: 26px;
+    }
+
+    .section-intro {
+        font-size: 14px;
+        margin-bottom: 25px;
+    }
+
+    .how-to-content {
+        padding: 25px 20px;
+        border-radius: 12px;
+    }
+
+    .how-to-content h3 {
+        font-size: 19px;
+        margin-top: 24px;
+    }
+
+    .how-to-content p,
+    .how-to-content li {
+        font-size: 14px;
+        line-height: 1.7;
+    }
+}
