@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-      <meta charset="UTF-8">
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Contact Us - Word Counter</title>
@@ -140,7 +140,11 @@
                             Fill out the form below with your question or feedback.
                         </p>
 
-                        <form id="contactForm">
+                        <form
+                            id="contactForm"
+                            action="https://formspree.io/f/xyeyzvdb"
+                            method="POST"
+                        >
 
                             <div class="form-group">
 
@@ -273,22 +277,6 @@
         </div>
 
     </footer>
-
-
-    <!-- Contact Form Script -->
-    <script>
-        const contactForm = document.getElementById("contactForm");
-
-        contactForm.addEventListener("submit", function(event) {
-            event.preventDefault();
-
-            alert(
-                "Thank you for contacting us. Your message form is ready, but email delivery will be connected after the website is published."
-            );
-
-            contactForm.reset();
-        });
-    </script>
 
 </body>
 </html>
