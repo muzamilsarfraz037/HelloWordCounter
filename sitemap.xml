@@ -2,27 +2,27 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
     <url>
-        <loc>https://YOUR-DOMAIN.com/</loc>
+        <loc>https://ourwordcounter.com/</loc>
     </url>
 
     <url>
-        <loc>https://YOUR-DOMAIN.com/about.html</loc>
+        <loc>https://ourwordcounter.com/about.html</loc>
     </url>
 
     <url>
-        <loc>https://YOUR-DOMAIN.com/faq.html</loc>
+        <loc>https://ourwordcounter.com/faq.html</loc>
     </url>
 
     <url>
-        <loc>https://YOUR-DOMAIN.com/privacy.html</loc>
+        <loc>https://ourwordcounter.com/privacy.html</loc>
     </url>
 
     <url>
-        <loc>https://YOUR-DOMAIN.com/terms.html</loc>
+        <loc>https://ourwordcounter.com/terms.html</loc>
     </url>
 
     <url>
-        <loc>https://YOUR-DOMAIN.com/contact.html</loc>
+        <loc>https://ourwordcounter.com/contact.html</loc>
     </url>
 
 </urlset>
